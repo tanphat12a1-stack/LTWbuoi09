@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/MainLayout.cshtml";
+}
+@using LTW_Buoi09.Models;
+@model List<Sach>
+
+<div class="container-fluid">
+    <h2 class="w-100 text-center">LIST BOOK</h2>
+    <div class="row">
+        @foreach (var s in Model)
+{
+    <div class="col-lg-4 mb-3">
+        <div class="card">
+            <img class="card-img-top" src="~/Content/HinhAnhSP/@s.AnhBia" width="300" height="350" />
+            <div class="card-body">
+                <h5 class="card-title text-center">@s.TenSach</h5>
+                <h5 class="text-center">
+                    <a href="/Home/DetailsIndex/?maS=@s.MaSach" style="text-decoration: none">Xem chi tiết</a>
+                </h5>
+            </div>
+        </div>
+    </div>
+}
+    </div>
+</div>
+

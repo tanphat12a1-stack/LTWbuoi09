@@ -1,0 +1,66 @@
+﻿@model LTW_Buoi09.Models.KhachHang
+
+@{
+    ViewBag.Title = "SignIn";
+    Layout = "~/Views/Shared/MainLayout.cshtml";
+}
+
+<h2>Đăng ký tài khoản</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>User</legend>
+
+        <div class="editor-label">
+            Họ tên khách hàng
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.HoTen)
+            @Html.ValidationMessageFor(model => model.HoTen)
+        </div>
+        <div class="editor-label">
+            Tên đăng nhập
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TaiKhoan)
+            @Html.ValidationMessageFor(model => model.TaiKhoan)
+        </div>
+
+        <div class="editor-label">
+            Mật khẩu
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.MatKhau)
+            @Html.ValidationMessageFor(model => model.MatKhau)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Email)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Email)
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DiaChi)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DiaChi)
+            @Html.ValidationMessageFor(model => model.DiaChi)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DienThoai)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DienThoai)
+            @Html.ValidationMessageFor(model => model.DienThoai)
+        </div>
+        <p>
+            <input type="submit" value="Đăng ký" />
+        </p>
+    </fieldset>
+}
+

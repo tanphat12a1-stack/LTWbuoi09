@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "DetailsIndex";
+    Layout = "~/Views/Shared/MainLayout.cshtml";
+    List<ThamGia> tgs = ViewBag.tg;
+}
+@using LTW_Buoi09.Models
+@model Sach
+<h2 class="text-center">THÔNG TIN CHI TIẾT SÁCH</h2>
+<div class="row p-2" style="border: 2px solid black">
+    <div class="col-4 align-content-center">
+        <img src="~/Content/HinhAnhSP/@Model.AnhBia" />
+    </div>
+    <div class="col-8">
+        <p>Tên sách: @Model.TenSach</p>
+        <p><b>Mô tả: </b>@Model.MoTa</p>
+        <p>@Model.GiaBan</p>
+        <div>
+            <p>Các tác giả:</p>
+            @foreach (var tg in tgs)
+            {
+            <ul>
+                <li>@tg.TacGia.TenTacGia<span> - </span>@tg.VaiTro</li>
+            </ul>    
+            }
+            <button class="btn btn-warning" style="float: right">Đặt mua</button>
+        </div>
+    </div>
+</div>
+<h2 class="text-center w-100 bg-danger text-white">Các sản phẩm cùng chủ dề</h2>
+<div class="row">
+    <div class="col-2">
+        @foreach(){
+            
+        }
+    </div>
+</div>

@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "XLSearch";
+    Layout = "~/Views/Shared/MainLayout.cshtml";
+}
+
+<form action="/Home/XLSearch" method="post">
+    <p>Tên sản phẩm</p><br />
+    <input type="text" name="txtTuKhoa" placeholder="Từ khóa..." class="form-control"/>
+    <p>Chủ đề</p>
+    @Html.DropDownList("MaChuDe");
+    <p>Giá</p>
+    <input type="checkbox"  value="1" />0-10.000 VNĐ<br />
+    <input type="checkbox" value="2" /><br />
+    <input type="checkbox" value="3" /><br />
+    <input type="checkbox" value="4" /><br />
+</form>
